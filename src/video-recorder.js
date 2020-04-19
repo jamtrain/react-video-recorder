@@ -411,16 +411,17 @@ export default class VideoRecorder extends Component {
   }
 
   handleStartRecording = () => {
-    if (this.props.onStartRecording) {
-      this.props.onStartRecording()
-    }
-
     this.setState({
       isRunningCountdown: true,
       isReplayingVideo: false
     })
 
-    setTimeout(() => this.startRecording(), this.props.countdownTime)
+    setTimeout(() => {
+	this.startRecording()
+        if (this.props.onStartRecording) {
+      	    this.props.onStartRecording()
+    	}
+    , this.props.countdownTime)
   }
 
   startRecording = () => {
