@@ -14,17 +14,7 @@
     "clean": "rm -rf lib",
     "build": "babel src -d lib --copy-files --ignore **/*.stories.js,**/*.test.js,**/*.browser-test.js",
     "prebuild": "npm run clean",
-    "prepublish": "NODE_ENV=production npm run build",
-    "start": "npm run storybook",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm test"
-    }
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "**/*.js": [
