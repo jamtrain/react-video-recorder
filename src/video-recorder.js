@@ -421,7 +421,7 @@ export default class VideoRecorder extends Component {
         if (this.props.onStartRecording) {
       	    this.props.onStartRecording()
     	}
-    , this.props.countdownTime)
+    }, this.props.countdownTime)
   }
 
   startRecording = () => {

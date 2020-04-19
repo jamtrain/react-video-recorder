@@ -6,16 +6,16 @@
     "README.md"
   ],
   "scripts": {
-    "test": "yarn test:unit && yarn jest:browser",
+    "test": "npm test:unit && npm jest:browser",
     "test:unit": "jest -c test/unit/jest.config.js",
     "jest:browser": "jest -c test/browser/jest.config.js",
     "test:browser": "start-server-and-test storybook http-get://localhost:6006 jest:browser",
     "lint": "eslint .",
     "clean": "rm -rf lib",
     "build": "babel src -d lib --copy-files --ignore **/*.stories.js,**/*.test.js,**/*.browser-test.js",
-    "prebuild": "yarn run clean",
-    "prepublish": "NODE_ENV=production yarn run build",
-    "start": "yarn run storybook",
+    "prebuild": "npm run clean",
+    "prepublish": "NODE_ENV=production npm run build",
+    "start": "npm run storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "travis-deploy-once": "travis-deploy-once",
@@ -23,7 +23,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn test"
+      "pre-commit": "lint-staged && npm test"
     }
   },
   "lint-staged": {
